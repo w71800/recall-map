@@ -1,219 +1,25 @@
-// 真實的罷免選舉資料（來自 result.json）
-const realRecallData = {
-  "新竹市": {
-    candidate: "高虹安",
-    agreeVotes: 86291,
-    disagreeVotes: 124360,
-    totalVotes: 212025,
-    turnoutRate: 0.58,
-    recallSuccess: false
-  },
-  "雲林縣第1選舉區": {
-    candidate: "丁學忠",
-    agreeVotes: 57331,
-    disagreeVotes: 77164,
-    totalVotes: 135470,
-    turnoutRate: 0.49,
-    recallSuccess: false
-  },
-  "臺東縣選舉區": {
-    candidate: "黃建賓",
-    agreeVotes: 21123,
-    disagreeVotes: 34889,
-    totalVotes: 56258,
-    turnoutRate: 0.49,
-    recallSuccess: false
-  },
-  "桃園市第5選舉區": {
-    candidate: "呂玉玲",
-    agreeVotes: 59828,
-    disagreeVotes: 97970,
-    totalVotes: 158627,
-    turnoutRate: 0.56,
-    recallSuccess: false
-  },
-  "新北市第9選舉區": {
-    candidate: "林德福",
-    agreeVotes: 51484,
-    disagreeVotes: 83862,
-    totalVotes: 136061,
-    turnoutRate: 0.57,
-    recallSuccess: false
-  },
-  "桃園市第4選舉區": {
-    candidate: "萬美玲",
-    agreeVotes: 72626,
-    disagreeVotes: 97544,
-    totalVotes: 170995,
-    turnoutRate: 0.55,
-    recallSuccess: false
-  },
-  "臺中市第4選舉區": {
-    candidate: "廖偉翔",
-    agreeVotes: 83812,
-    disagreeVotes: 106534,
-    totalVotes: 191337,
-    turnoutRate: 0.56,
-    recallSuccess: false
-  },
-  "臺北市第8選舉區": {
-    candidate: "賴士葆",
-    agreeVotes: 55958,
-    disagreeVotes: 86907,
-    totalVotes: 143489,
-    turnoutRate: 0.58,
-    recallSuccess: false
-  },
-  "臺北市第4選舉區": {
-    candidate: "李彥秀",
-    agreeVotes: 78560,
-    disagreeVotes: 105169,
-    totalVotes: 184454,
-    turnoutRate: 0.59,
-    recallSuccess: false
-  },
-  "新竹市選舉區": {
-    candidate: "鄭正鈐",
-    agreeVotes: 89970,
-    disagreeVotes: 119305,
-    totalVotes: 210685,
-    turnoutRate: 0.59,
-    recallSuccess: false
-  },
-  "臺中市第5選舉區": {
-    candidate: "黃健豪",
-    agreeVotes: 88914,
-    disagreeVotes: 119540,
-    totalVotes: 209430,
-    turnoutRate: 0.55,
-    recallSuccess: false
-  },
-  "臺北市第7選舉區": {
-    candidate: "徐巧芯",
-    agreeVotes: 62633,
-    disagreeVotes: 75401,
-    totalVotes: 138630,
-    turnoutRate: 0.59,
-    recallSuccess: false
-  },
-  "花蓮縣選舉區": {
-    candidate: "傅崐萁",
-    agreeVotes: 48969,
-    disagreeVotes: 65300,
-    totalVotes: 115006,
-    turnoutRate: 0.60,
-    recallSuccess: false
-  },
-  "新北市第1選舉區": {
-    candidate: "洪孟楷",
-    agreeVotes: 94808,
-    disagreeVotes: 121592,
-    totalVotes: 217546,
-    turnoutRate: 0.53,
-    recallSuccess: false
-  },
-  "桃園市第6選舉區": {
-    candidate: "邱若華",
-    agreeVotes: 61635,
-    disagreeVotes: 92049,
-    totalVotes: 154607,
-    turnoutRate: 0.54,
-    recallSuccess: false
-  },
-  "新北市第8選舉區": {
-    candidate: "張智倫",
-    agreeVotes: 67131,
-    disagreeVotes: 95319,
-    totalVotes: 163480,
-    turnoutRate: 0.56,
-    recallSuccess: false
-  },
-  "基隆市選舉區": {
-    candidate: "林沛祥",
-    agreeVotes: 65143,
-    disagreeVotes: 96294,
-    totalVotes: 162263,
-    turnoutRate: 0.53,
-    recallSuccess: false
-  },
-  "臺北市第3選舉區": {
-    candidate: "王鴻薇",
-    agreeVotes: 76463,
-    disagreeVotes: 86311,
-    totalVotes: 163452,
-    turnoutRate: 0.59,
-    recallSuccess: false
-  },
-  "臺中市第6選舉區": {
-    candidate: "羅廷瑋",
-    agreeVotes: 74012,
-    disagreeVotes: 86422,
-    totalVotes: 161305,
-    turnoutRate: 0.58,
-    recallSuccess: false
-  },
-  "新北市第12選舉區": {
-    candidate: "廖先翔",
-    agreeVotes: 60944,
-    disagreeVotes: 78798,
-    totalVotes: 140456,
-    turnoutRate: 0.52,
-    recallSuccess: false
-  },
-  "桃園市第1選舉區": {
-    candidate: "牛煦庭",
-    agreeVotes: 86734,
-    disagreeVotes: 106637,
-    totalVotes: 194359,
-    turnoutRate: 0.54,
-    recallSuccess: false
-  },
-  "新北市第7選舉區": {
-    candidate: "葉元之",
-    agreeVotes: 63357,
-    disagreeVotes: 66917,
-    totalVotes: 130961,
-    turnoutRate: 0.56,
-    recallSuccess: false
-  },
-  "桃園市第3選舉區": {
-    candidate: "魯明哲",
-    agreeVotes: 66301,
-    disagreeVotes: 105323,
-    totalVotes: 172395,
-    turnoutRate: 0.55,
-    recallSuccess: false
-  },
-  "桃園市第2選舉區": {
-    candidate: "涂權吉",
-    agreeVotes: 70310,
-    disagreeVotes: 101419,
-    totalVotes: 172665,
-    turnoutRate: 0.54,
-    recallSuccess: false
-  },
-  "臺北市第6選舉區": {
-    candidate: "羅智強",
-    agreeVotes: 56726,
-    disagreeVotes: 74808,
-    totalVotes: 132103,
-    turnoutRate: 0.57,
-    recallSuccess: false
-  }
-};
+// 資料處理器實例
+let dataProcessor = null;
+let realRecallData = {};
+let cityToDistricts = {};
 
-// 縣市與選舉區對應表（更新為真實資料）
-const cityToDistricts = {
-  "臺北市": ["臺北市第3選舉區", "臺北市第4選舉區", "臺北市第6選舉區", "臺北市第7選舉區", "臺北市第8選舉區"],
-  "新北市": ["新北市第1選舉區", "新北市第7選舉區", "新北市第8選舉區", "新北市第9選舉區", "新北市第12選舉區"],
-  "桃園市": ["桃園市第1選舉區", "桃園市第2選舉區", "桃園市第3選舉區", "桃園市第4選舉區", "桃園市第5選舉區", "桃園市第6選舉區"],
-  "臺中市": ["臺中市第4選舉區", "臺中市第5選舉區", "臺中市第6選舉區"],
-  "基隆市": ["基隆市選舉區"],
-  "新竹市": ["新竹市", "新竹市選舉區"],
-  "雲林縣": ["雲林縣第1選舉區"],
-  "臺東縣": ["臺東縣選舉區"],
-  "花蓮縣": ["花蓮縣選舉區"]
-};
+// 初始化資料處理器
+async function initializeDataProcessor() {
+  try {
+    dataProcessor = new DataProcessor();
+    await dataProcessor.loadData();
+    
+    // 取得處理後的資料
+    realRecallData = dataProcessor.getRecallData();
+    cityToDistricts = dataProcessor.getCityToDistricts();
+    
+    console.log('資料處理器初始化成功');
+    return true;
+  } catch (error) {
+    console.error('資料處理器初始化失敗:', error);
+    return false;
+  }
+}
 
 // 台灣真實地理資料（簡化版本，實際應用會使用完整的 GeoJSON）
 // 實際開發時可從以下來源獲取：
@@ -288,7 +94,16 @@ async function loadRealTaiwanMap() {
 
 let svg, projection, path, tooltip, currentFilter = 'all';
 
-function initMap() {
+async function initMap() {
+  // 等待資料處理器初始化
+  if (!dataProcessor || !dataProcessor.isDataReady()) {
+    const success = await initializeDataProcessor();
+    if (!success) {
+      console.error('無法初始化地圖：資料載入失敗');
+      return;
+    }
+  }
+  
   const mapContainer = d3.select("#map");
   
   // 清除現有內容
@@ -322,14 +137,33 @@ function drawMap(taiwanGeoData) {
     return;
   }
 
+  // 縣市名稱對應表（簡體字對應繁體字，以及舊名稱對應新名稱）
+  const cityNameMapping = {
+    '台東縣': '臺東縣',
+    '台中市': '臺中市',
+    '台北市': '臺北市',
+    '台南市': '臺南市',
+    '桃園縣': '桃園市',
+    '新竹市': '新竹市',
+    '基隆市': '基隆市',
+    '雲林縣': '雲林縣',
+    '花蓮縣': '花蓮縣'
+  };
+
   // 為每個縣市添加選舉區資訊
-  const featuresWithDistricts = taiwanGeoData.features.map(feature => ({
-    ...feature,
-    properties: {
-      ...feature.properties,
-      districts: cityToDistricts[feature.properties.name] || []
-    }
-  }));
+  const featuresWithDistricts = taiwanGeoData.features.map(feature => {
+    const originalName = feature.properties.name;
+    const mappedName = cityNameMapping[originalName] || originalName;
+    
+    return {
+      ...feature,
+      properties: {
+        ...feature.properties,
+        name: mappedName, // 使用對應後的繁體字名稱
+        districts: cityToDistricts[mappedName] || []
+      }
+    };
+  });
 
   // 繪製縣市邊界
   svg.selectAll(".district")
@@ -337,17 +171,11 @@ function drawMap(taiwanGeoData) {
       .enter()
       .append("path")
       .attr("class", d => {
-          const hasRecall = d.properties.districts.some(district => realRecallData[district]);
+          const hasRecall = d.properties.districts.some(district => dataProcessor.getDistrictData(district));
           if (!hasRecall) return "district no-recall";
           
           // 計算該縣市的平均同意票比例
-          const recallDistricts = d.properties.districts.filter(district => realRecallData[district]);
-          if (recallDistricts.length === 0) return "district no-recall";
-          
-          const avgAgreeRatio = recallDistricts.reduce((sum, district) => {
-              const data = realRecallData[district];
-              return sum + (data.agreeVotes / data.totalVotes);
-          }, 0) / recallDistricts.length;
+          const avgAgreeRatio = dataProcessor.getCityAverageAgreeRatio(d.properties.name);
           
           // 根據同意票比例決定顏色深淺
           if (avgAgreeRatio > 0.45) return "district high-agree";
@@ -364,19 +192,19 @@ function drawMap(taiwanGeoData) {
 }
 
 function handleMouseOver(event, d) {
-  const hasRecall = d.properties.districts.some(district => realRecallData[district]);
+  const hasRecall = d.properties.districts.some(district => dataProcessor.getDistrictData(district));
   
   let content = `<strong>${d.properties.name}</strong><br/>`;
   
   if (hasRecall) {
-      const recallDistrict = d.properties.districts.find(district => realRecallData[district]);
-      const data = realRecallData[recallDistrict];
+      const cityData = dataProcessor.getCityRecallData(d.properties.name);
+      const firstData = cityData[0];
       
-      content += `候選人：${data.candidate}<br/>`;
-      content += `同意票：${data.agreeVotes.toLocaleString()}<br/>`;
-      content += `不同意票：${data.disagreeVotes.toLocaleString()}<br/>`;
-      content += `投票率：${(data.turnoutRate * 100).toFixed(1)}%<br/>`;
-      content += `結果：${data.recallSuccess ? '罷免成功' : '罷免失敗'}`;
+      content += `候選人：${firstData.candidate}<br/>`;
+      content += `同意票：${firstData.agreeVotes.toLocaleString()}<br/>`;
+      content += `不同意票：${firstData.disagreeVotes.toLocaleString()}<br/>`;
+      content += `投票率：${(firstData.turnoutRate * 100).toFixed(1)}%<br/>`;
+      content += `結果：${firstData.recallSuccess ? '罷免成功' : '罷免失敗'}`;
   } else {
       content += '無罷免案';
   }
@@ -395,7 +223,7 @@ function handleMouseOut() {
 }
 
 function handleClick(event, d) {
-  const hasRecall = d.properties.districts.some(district => realRecallData[district]);
+  const hasRecall = d.properties.districts.some(district => dataProcessor.getDistrictData(district));
   
   if (hasRecall) {
     // 顯示長條圖模態框
@@ -463,9 +291,9 @@ function drawBarChart(districts) {
   
   // 準備資料
   const data = districts
-    .filter(district => realRecallData[district])
+    .filter(district => dataProcessor.getDistrictData(district))
     .map(district => {
-      const recallData = realRecallData[district];
+      const recallData = dataProcessor.getDistrictData(district);
       return {
         district: district,
         candidate: recallData.candidate,
@@ -652,50 +480,57 @@ function applyFilter() {
       .style("opacity", d => {
           if (currentFilter === 'all') return 1;
           
-          const hasRecall = d.properties.districts.some(district => realRecallData[district]);
+          const hasRecall = d.properties.districts.some(district => dataProcessor.getDistrictData(district));
           
           if (currentFilter === 'high-agree') {
               if (!hasRecall) return 0.2;
-              const recallDistricts = d.properties.districts.filter(district => realRecallData[district]);
-              if (recallDistricts.length === 0) return 0.2;
-              const avgAgreeRatio = recallDistricts.reduce((sum, district) => {
-                  const data = realRecallData[district];
-                  return sum + (data.agreeVotes / data.totalVotes);
-              }, 0) / recallDistricts.length;
-              return avgAgreeRatio > 0.45 ? 1 : 0.2;
+              return dataProcessor.getCityAverageAgreeRatio(d.properties.name) > 0.45 ? 1 : 0.2;
           }
           
           if (currentFilter === 'medium-agree') {
               if (!hasRecall) return 0.2;
-              const recallDistricts = d.properties.districts.filter(district => realRecallData[district]);
-              if (recallDistricts.length === 0) return 0.2;
-              const avgAgreeRatio = recallDistricts.reduce((sum, district) => {
-                  const data = realRecallData[district];
-                  return sum + (data.agreeVotes / data.totalVotes);
-              }, 0) / recallDistricts.length;
-              return avgAgreeRatio > 0.35 && avgAgreeRatio <= 0.45 ? 1 : 0.2;
+              const avgRatio = dataProcessor.getCityAverageAgreeRatio(d.properties.name);
+              return avgRatio > 0.35 && avgRatio <= 0.45 ? 1 : 0.2;
           }
           
           if (currentFilter === 'high-turnout') {
               if (!hasRecall) return 0.2;
-              const recallDistrict = d.properties.districts.find(district => realRecallData[district]);
-              const data = realRecallData[recallDistrict];
-              return data.turnoutRate > 0.4 ? 1 : 0.2;
+              const cityData = dataProcessor.getCityRecallData(d.properties.name);
+              if (cityData.length === 0) return 0.2;
+              const avgTurnout = cityData.reduce((sum, data) => sum + data.turnoutRate, 0) / cityData.length;
+              return avgTurnout > 0.4 ? 1 : 0.2;
           }
           
           return 1;
       });
 }
 
-function loadData() {
-  // 模擬載入資料的過程
+async function loadData() {
+  // 顯示載入狀態
   const mapContainer = d3.select("#map");
   mapContainer.html('<div class="loading">正在載入最新資料...</div>');
   
-  setTimeout(() => {
-      initMap();
-  }, 1500);
+  try {
+    // 重新載入資料
+    await dataProcessor.reloadData();
+    
+    // 更新全域變數
+    realRecallData = dataProcessor.getRecallData();
+    cityToDistricts = dataProcessor.getCityToDistricts();
+    
+    // 重新初始化地圖
+    await initMap();
+  } catch (error) {
+    console.error('重新載入資料失敗:', error);
+    mapContainer.html('<div class="loading">載入失敗，請重試</div>');
+  }
 }
 
 // 頁面載入時初始化地圖
-window.addEventListener('load', initMap);
+window.addEventListener('load', async () => {
+  try {
+    await initMap();
+  } catch (error) {
+    console.error('地圖初始化失敗:', error);
+  }
+});
