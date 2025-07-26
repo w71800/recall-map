@@ -192,25 +192,8 @@ function drawMap(taiwanGeoData) {
 }
 
 function handleMouseOver(event, d) {
-  const hasRecall = d.properties.districts.some(district => dataProcessor.getDistrictData(district));
-  
-  let content = `<strong>${d.properties.name}</strong><br/>`;
-  
-  if (hasRecall) {
-      const cityData = dataProcessor.getCityRecallData(d.properties.name);
-      const firstData = cityData[0];
-      
-      content += `候選人：${firstData.candidate}<br/>`;
-      content += `同意票：${firstData.agreeVotes.toLocaleString()}<br/>`;
-      content += `不同意票：${firstData.disagreeVotes.toLocaleString()}<br/>`;
-      content += `投票率：${(firstData.turnoutRate * 100).toFixed(1)}%<br/>`;
-      content += `結果：${firstData.recallSuccess ? '罷免成功' : '罷免失敗'}`;
-  } else {
-      content += '無罷免案';
-  }
-  
-  tooltip.html(content)
-      .style("display", "block");
+  // 只做視覺凸顯效果，不顯示資料
+  // 資料顯示功能已移除
 }
 
 function handleMouseMove(event) {
@@ -219,7 +202,7 @@ function handleMouseMove(event) {
 }
 
 function handleMouseOut() {
-  tooltip.style("display", "none");
+  // 移除工具提示顯示功能
 }
 
 function handleClick(event, d) {

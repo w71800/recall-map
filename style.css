@@ -172,7 +172,14 @@ body {
 }
 
 .district.no-recall {
-  fill: #3498db;
+  fill: #999;
+}
+
+.district.no-recall:hover {
+  fill: #777;
+  stroke-width: 3;
+  stroke: #2c3e50;
+  filter: brightness(1.1);
 }
 
 .tooltip {
