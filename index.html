@@ -11,7 +11,7 @@
     <div class="container">
         <div class="header">
             <div class="title">台灣罷免選舉結果地圖</div>
-            <div class="subtitle">2024年立委罷免選舉各選區結果統計</div>
+            <div class="subtitle">2025年立委罷免選舉各選區比例統計</div>
         </div>
         
         <div class="map-container">
@@ -27,11 +27,15 @@
                     <h3>圖例說明</h3>
                     <div class="legend-item">
                         <div class="legend-color" style="background: #e74c3c;"></div>
-                        <div class="legend-text">罷免成功（同意票 > 不同意票且達門檻）</div>
+                        <div class="legend-text">高同意票比例（>45%）</div>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color" style="background: #f39c12;"></div>
+                        <div class="legend-text">中同意票比例（35-45%）</div>
                     </div>
                     <div class="legend-item">
                         <div class="legend-color" style="background: #95a5a6;"></div>
-                        <div class="legend-text">罷免失敗（未達門檻或不同意票較多）</div>
+                        <div class="legend-text">低同意票比例（<35%）</div>
                     </div>
                     <div class="legend-item">
                         <div class="legend-color" style="background: #3498db;"></div>
@@ -43,8 +47,8 @@
                     <h3>篩選條件</h3>
                     <div class="filter-buttons">
                         <button class="filter-btn active" onclick="filterDistricts('all')">顯示全部</button>
-                        <button class="filter-btn" onclick="filterDistricts('recall-success')">僅顯示罷免成功</button>
-                        <button class="filter-btn" onclick="filterDistricts('recall-failed')">僅顯示罷免失敗</button>
+                        <button class="filter-btn" onclick="filterDistricts('high-agree')">高同意票比例</button>
+                        <button class="filter-btn" onclick="filterDistricts('medium-agree')">中同意票比例</button>
                         <button class="filter-btn" onclick="filterDistricts('high-turnout')">高投票率選區</button>
                     </div>
                 </div>
