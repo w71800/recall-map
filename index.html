@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>台灣罷免選舉結果地圖</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="title">台灣罷免選舉結果地圖</div>
+            <div class="subtitle">2024年立委罷免選舉各選區結果統計</div>
+        </div>
+        
+        <div class="map-container">
+            <div class="map-wrapper">
+                <div id="map" style="width: 100%; height: 600px;"></div>
+                <div class="data-source">
+                    資料來源：中央選舉委員會開放資料平台
+                </div>
+            </div>
+            
+            <div class="controls">
+                <div class="legend">
+                    <h3>圖例說明</h3>
+                    <div class="legend-item">
+                        <div class="legend-color" style="background: #e74c3c;"></div>
+                        <div class="legend-text">罷免成功（同意票 > 不同意票且達門檻）</div>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color" style="background: #95a5a6;"></div>
+                        <div class="legend-text">罷免失敗（未達門檻或不同意票較多）</div>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color" style="background: #3498db;"></div>
+                        <div class="legend-text">無罷免案</div>
+                    </div>
+                </div>
+                
+                <div class="filter-section">
+                    <h3>篩選條件</h3>
+                    <div class="filter-buttons">
+                        <button class="filter-btn active" onclick="filterDistricts('all')">顯示全部</button>
+                        <button class="filter-btn" onclick="filterDistricts('recall-success')">僅顯示罷免成功</button>
+                        <button class="filter-btn" onclick="filterDistricts('recall-failed')">僅顯示罷免失敗</button>
+                        <button class="filter-btn" onclick="filterDistricts('high-turnout')">高投票率選區</button>
+                    </div>
+                </div>
+                
+                <div class="info-panel">
+                    <h4>選區資訊</h4>
+                    <div id="selected-info">點擊地圖上的選區查看詳細資訊</div>
+                </div>
+                
+                <button class="refresh-btn" onclick="loadData()">重新載入資料</button>
+            </div>
+        </div>
+    </div>
+    
+    <div class="tooltip" id="tooltip" style="display: none;"></div>
+
+    <script src="main.js"></script>
+</body>
+</html>
